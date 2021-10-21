@@ -23,6 +23,7 @@ body {
     height: 186px;
     background: url('assets/millenniales.png');
     background-size: contain;
+    animation: fade 3s, blink infinite 5s 3s;
 
     position: absolute;
     top: 20px;
@@ -34,6 +35,7 @@ body {
     height: 137px;
     background: center no-repeat url('assets/quiz.png');
     background-size: contain;
+    animation: quizIn 3s;
 
     position: absolute;
     top: 180px;
@@ -54,8 +56,50 @@ body {
     height: 160px;
     background: center no-repeat url('assets/vhs-note.png');
     cursor: pointer;
+    transform: scale(.95);
+    transition: .2s;
 
     position: absolute;
     top: 121px;
     left: 396px;
+}
+#lunchQuiz:hover {
+    transform: scale(1);
+}
+
+
+/** Animations **/
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes blink {
+    0%   {opacity: 1;}
+    50% {opacity: .6;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes zoom {
+    0%   {transform: scale(0);}
+    100% {transform: scale(1.0);}
+}
+
+@keyframes quizIn {
+    0%   {opacity: 0;}
+    60%  {margin-top: 100px; opacity: 0;}
+    100% {margin-top: 0px; opacity: 1;}
+}
+
+
+/** Media Queri **/
+
+@media (max-width: 1500px) {
+    
 }
