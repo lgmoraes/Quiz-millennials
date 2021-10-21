@@ -1,0 +1,61 @@
+html {
+	height: 100%;
+    background: fixed center url('assets/blue fog.jpg');
+    background-size: cover;
+}
+
+body {
+    width: 1500px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+#bottom {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#millennials {
+    width: 866px;
+    height: 186px;
+    background: url('assets/millenniales.png');
+    background-size: contain;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#quiz {
+    width: 866px;
+    height: 137px;
+    background: center no-repeat url('assets/quiz.png');
+    background-size: contain;
+
+    position: absolute;
+    top: 180px;
+    left: 20px;
+}
+
+#vhs {
+    width: 1064px;  /* width: 862px + 202 */
+    height: 393px;
+    margin:auto;
+    background: no-repeat url('assets/vhs.png');
+    background-size: contain;
+    position: relative;
+}
+
+#lunchQuiz {
+    width: 270px;
+    height: 160px;
+    background: center no-repeat url('assets/vhs-note.png');
+    cursor: pointer;
+
+    position: absolute;
+    top: 121px;
+    left: 396px;
+}
