@@ -11,13 +11,23 @@
     <title><?php echo APP_NAME; ?></title>
 </head>
 <body>
+    <!-- Intro -->
+    <div id="intro_message"></div>
+    <div id="btn_play" class="hoverScale"></div>
+
+    <!-- Ecran Titre -->
     <div id="millennials"></div>
     <div id="quiz"></div>
 
     <div id="bottom">
         <div id="vhs">
-            <div id="lunchQuiz"></div>
+            <div id="lunchQuiz" class="hoverScale"></div>
         </div>
     </div>
+
+    <!-- Audio -->
+    <audio id="music_menu" src="contents/music/<?php echo getMainMenuMusic(); ?>"></audio>
+    <audio id="extrait" src=""></audio>
+<script src="index.js"></script>
 </body>
 </html>

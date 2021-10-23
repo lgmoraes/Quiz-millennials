@@ -7,16 +7,55 @@ html {
 body {
     width: 1500px;
     height: 100%;
+    min-height: 760px;
     margin: auto;
+    padding: 1em;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    box-sizing: border-box;
 }
 
 #bottom {
     width: 100%;
+    overflow: hidden;   /* Empêche l'apparition du scroll */
+
     position: absolute;
     left: 0;
     bottom: 0;
 }
+
+.hoverScale {
+    transform: scale(.95);
+    transition: .2s;
+}
+.hoverScale:hover {
+    transform: scale(1);
+}
+
+
+/*** Intro ***/
+
+#intro_message {
+    width: 600px;
+    height: 213px;
+    margin: 5em auto;
+    background: url('assets/intro.png');
+    background-size: contain;
+}
+
+#btn_play {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    background: url('assets/btn-play.png');
+    background-size: contain;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+/*** Ecran titre ***/
 
 #millennials {
     width: 866px;
@@ -48,6 +87,7 @@ body {
     margin:auto;
     background: no-repeat url('assets/vhs.png');
     background-size: contain;
+    animation: slideUp_bottom 1s, fade 1s;
     position: relative;
 }
 
@@ -56,19 +96,23 @@ body {
     height: 160px;
     background: center no-repeat url('assets/vhs-note.png');
     cursor: pointer;
-    transform: scale(.95);
-    transition: .2s;
 
     position: absolute;
     top: 121px;
     left: 396px;
 }
-#lunchQuiz:hover {
-    transform: scale(1);
+
+
+/*** Scenes ***/
+
+/* Ecran titre */
+#millennials, #quiz, #vhs {
+    display: none;
 }
 
 
-/** Animations **/
+
+/*** Animations ***/
 
 @keyframes rotate {
     0%   {transform: rotate(0deg);}
@@ -77,7 +121,7 @@ body {
 
 @keyframes blink {
     0%   {opacity: 1;}
-    50% {opacity: .6;}
+    50%  {opacity: .6;}
     100% {opacity: 1;}
 }
 
@@ -91,6 +135,11 @@ body {
     100% {transform: scale(1.0);}
 }
 
+@keyframes slideUp_bottom {
+    0%   {margin-bottom: -100px;}
+    100% {margin-bottom: 0px;}
+}
+
 @keyframes quizIn {
     0%   {opacity: 0;}
     60%  {margin-top: 100px; opacity: 0;}
@@ -98,7 +147,7 @@ body {
 }
 
 
-/** Media Queri **/
+/*** Media Queri ***/
 
 @media (max-width: 1500px) {
     
