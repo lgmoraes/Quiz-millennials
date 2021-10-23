@@ -1,2 +1,4 @@
 contents/*
-!contents/dummy
+contents/music/*
+!contents/music
+!contents/music/dummy
