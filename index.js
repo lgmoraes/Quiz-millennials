@@ -193,8 +193,12 @@ function nextMovie() {
 				cover.style.backgroundImage = "url('app/cover.php?t=" + Date.now() + "')";
 			}
 			else {
+				var finalScore = xhr.response.split(':')[1];
+
+				end_scoreFinale.innerHTML = finalScore;
+
 				hideScore();
-				showMainMenu();
+				showEnd();
 			}
 		}
 		else {
@@ -244,4 +248,17 @@ function showScore() {
 
 function hideScore() {
 	score_grid.style.display = "none";
+};
+
+function showEnd() {
+	end_grid.style.display = "grid";
+
+	setTimeout(() => {
+		hideEnd();
+		showMainMenu();
+	}, 7000);
+};
+
+function hideEnd() {
+	end_grid.style.display = "none";
 };

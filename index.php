@@ -48,6 +48,11 @@
         <div id="score_time_bonus"></div>
     </div>
      
+    <!-- End -->
+    <div id="end_grid">
+        <div id="end_scoreFinale_text">SCORE FINALE</div>
+        <div id="end_scoreFinale"></div>
+    </div>
 
     <!-- Audio -->
     <audio id="music_menu" src="contents/music/<?php echo getMainMenuMusic(); ?>"></audio>

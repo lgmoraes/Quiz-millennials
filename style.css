@@ -238,6 +238,39 @@ body {
 }
 
 
+/*** End ***/
+
+#end_grid {
+    display: grid;
+    font-size: 2em;
+    place-items: center;
+    padding: 1em;
+    grid-gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2em 2em 1fr;
+
+    /* width: 100%; */
+    box-sizing: border-box;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#end_scoreFinale_text {
+    font-size: 2em;
+    grid-row: 2 / 3;
+    animation: fade 1.5s, zoom 1.5s;
+}
+#end_scoreFinale {
+    font-size: 3em;
+    grid-row: 3 / 4;
+    animation: invisible 1.5s, fade 1.5s 1.5s, zoom 1.5s 1.5s;
+}
+
+
 /*** Scenes ***/
 
 /* Ecran titre */
@@ -254,6 +287,12 @@ body {
 #score_grid {
     display: none;
 }
+
+/* End */
+#end_grid {
+    display: none;
+}
+
 
 /*** Animations ***/
 
