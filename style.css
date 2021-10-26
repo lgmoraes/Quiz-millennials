@@ -6,8 +6,13 @@ html {
 
 body {
     width: 1500px;
+    max-width: 100%;
     height: 100%;
     min-height: 760px;
+    font-size: 1.4em;
+    color: white;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: black 1px 1px;
     margin: auto;
     padding: 1em;
     overflow-x: hidden;
@@ -103,6 +108,136 @@ body {
 }
 
 
+/*** Quiz ***/
+
+#timer {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 8em;
+    margin: auto;
+    background: url('assets/timer-background.svg');
+
+    position: absolute;
+    bottom: calc(50%);
+    left: calc(50% - 150px);
+}
+#timer_rotate {
+    width: 300px;
+    height: 300px;
+    background: url('assets/timer-rotate.png');
+    animation: rotate 1s infinite linear;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: fade 3s;
+    cursor: pointer;
+
+    position: absolute;
+    top: 1em;
+    bottom: 9em;
+    left: 1em;
+    right: 1em;
+}
+
+#responses_grid {
+    display: grid;
+    padding: 1em;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3em 3em;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.response {
+    line-height: 2em;
+    padding: .5em;
+    text-align: center;
+    
+    border-radius: 2em;
+    border: 1px solid rgba(0, 0, 0, .4);
+    background-color: rgba(4, 4, 4, 0.6);
+    box-shadow:
+        0px 0px 3px black,
+        inset 0px 1px 0px rgba(255, 255, 255, .15);
+    margin-top: -1px;
+    cursor: pointer;
+    transition: .2s;
+}
+.response:hover {
+    background-color: rgba(14, 14, 14, 0.6);
+}
+.response.active {
+    background-color: orangered;
+    color: rgb(15, 15, 15);
+}
+.response.disabled {
+    opacity: .5;
+}
+
+#responseA {
+    animation: fade .4s;
+}
+#responseB {
+    animation: invisible .1s, fade .4s .1s;
+}
+#responseC {
+    animation: invisible .2s, fade .4s .2s;
+}
+#responseD {
+    animation: invisible .3s, fade .4s .3s;
+}
+
+
+/*** Score ***/
+
+#score_grid {
+    display: grid;
+    font-size: 1.5em;
+    place-items: center;
+    padding: 1em;
+    grid-gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(3, 2em) 1fr;
+
+    /* width: 100%; */
+    box-sizing: border-box;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#score_valide {
+    grid-row: 2 / 3;
+    animation: zoom .6s;
+}
+#score_time {
+    grid-row: 3 / 4;
+    animation: invisible .6s, zoom .6s .6s;
+}
+#score_time_bonus {
+    grid-row: 4 / 5;
+    animation: invisible 1.2s, zoom .6s 1.2s;
+}
+
+
 /*** Scenes ***/
 
 /* Ecran titre */
@@ -110,7 +245,15 @@ body {
     display: none;
 }
 
+/* Quiz */
+#responses_grid, #btn_passer, #cover, #timer {
+    display: none;
+}
 
+/* Score */
+#score_grid {
+    display: none;
+}
 
 /*** Animations ***/
 
@@ -133,6 +276,11 @@ body {
 @keyframes zoom {
     0%   {transform: scale(0);}
     100% {transform: scale(1.0);}
+}
+
+@keyframes invisible {
+    0%   {opacity: 0;}
+    100% {opacity: 0;}
 }
 
 @keyframes slideUp_bottom {
