@@ -41,8 +41,6 @@
         <div id="responseD" class="response">Réponse D</div>
     </div>
 
-    <div id="btn_passer"></div>
-
     <!-- Score -->
     <div id="score_grid">
         <div id="score_valide"></div>

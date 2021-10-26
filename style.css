@@ -246,7 +246,7 @@ body {
 }
 
 /* Quiz */
-#responses_grid, #btn_passer, #cover, #timer {
+#responses_grid, #cover, #timer {
     display: none;
 }
 
